@@ -11,17 +11,19 @@ function App() {
   const toggleMode = ()=>{
     if(mode === 'light'){
       setMode('dark');
+      document.body.style.backgroundColor = '#191a1b';
     }
     else{
       setMode('light');
+      document.body.style.backgroundColor = 'white';
     }
   }
   
   return (
     <div>
-      <Navbar modde={mode} />
+      <Navbar modde={mode} toggleModde={toggleMode}/>
 
-      <TextForm />
+      <TextForm modde={mode}/>
 
       <About />
  

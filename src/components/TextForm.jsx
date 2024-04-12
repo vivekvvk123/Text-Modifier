@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function TextForm() {
+function TextForm(props) {
   const [mystyle, setMyStyle] = useState({});
 
   const handleClick = (e) => {
@@ -93,17 +93,15 @@ function TextForm() {
   };
 
 
-  //Use ref hook ---> since without using useRef cannot copy in mobile devices
-
   const [text, setText] = useState("Enter your text here");
 
   return (
-    <div className="container flex flex-col items-center">
+    <div className={`container flex flex-col items-center text-${props.modde==="light"?"black":"white"} `}>
       <div className="p-8">
         <h1 className="text-3xl mb-2  ">Enter your text below</h1>
 
         <textarea
-          className="form-control border border-blue-600 bg-gray-100 w-full md:w-96 h-32 md:h-48 lg:w-[900px] sm:w-[400px]"
+          className={`form-control border border-blue-600  w-full md:w-96 h-32 md:h-48 lg:w-[900px] sm:w-[400px] bg-${props.modde==="light"?"white":"black"} text-${props.modde==="light"?"black":"white"} `}
           id="mybox"
           value={text}
           onChange={handleOnChange}
@@ -111,11 +109,11 @@ function TextForm() {
           // cols="90"
         ></textarea>
 
-        <div className="flex flex-col space-y-2 md:flex-row md:space-x-2 md:space-y-0 max-w-fit md:flex-wrap">
+        <div className={`flex flex-col space-y-2 md:flex-row md:space-x-2 md:space-y-0 max-w-fit md:flex-wrap text-${props.modde==="light"?"black":"white"}`}>
           <button
             type="button"
             onClick={handleClick}
-            className="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-white hover:text-black hover:outline outline-2"
+            className={`rounded-md  bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-white hover:text-black hover:outline outline-2  `}
           >
             Convert to Upper Case
           </button>
