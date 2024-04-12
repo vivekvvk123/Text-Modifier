@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
 function TextForm() {
+  const [mystyle, setMyStyle] = useState({});
+
   const handleClick = (e) => {
     console.log("uppercase clicked");
     let newText = text.toUpperCase();
@@ -80,7 +82,18 @@ function TextForm() {
 
   const clearText = () => {
     setText("");
-  }
+  };
+
+  const copyText = () => {
+    var text = document.getElementById("mybox");
+    text.select();
+    // console.log(text);
+    // console.log(text.value)
+    navigator.clipboard.writeText(text.value);
+  };
+
+
+  //Use ref hook ---> since without using useRef cannot copy in mobile devices
 
   const [text, setText] = useState("Enter your text here");
 
@@ -98,11 +111,11 @@ function TextForm() {
           // cols="90"
         ></textarea>
 
-        <div class="flex flex-col space-y-2 md:flex-row md:space-x-2 md:space-y-0 max-w-fit">
+        <div className="flex flex-col space-y-2 md:flex-row md:space-x-2 md:space-y-0 max-w-fit md:flex-wrap">
           <button
             type="button"
             onClick={handleClick}
-            class="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-white hover:text-black hover:outline outline-2"
+            className="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-white hover:text-black hover:outline outline-2"
           >
             Convert to Upper Case
           </button>
@@ -114,7 +127,7 @@ function TextForm() {
               let newText = text.toLowerCase();
               setText(newText);
             }}
-            class="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-white hover:text-black hover:outline outline-2"
+            className="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-white hover:text-black hover:outline outline-2"
           >
             Convert to lower Case
           </button>
@@ -122,7 +135,7 @@ function TextForm() {
           <button
             type="button"
             onClick={flipText}
-            class="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-white hover:text-black hover:outline outline-2"
+            className="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-white hover:text-black hover:outline outline-2"
           >
             Convert to Upside down
           </button>
@@ -130,9 +143,17 @@ function TextForm() {
           <button
             type="button"
             onClick={clearText}
-            class="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-white hover:text-black hover:outline outline-2"
+            className="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-white hover:text-black hover:outline outline-2"
           >
             Clear Text
+          </button>
+
+          <button
+            type="button"
+            onClick={copyText}
+            className="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-white hover:text-black hover:outline outline-2"
+          >
+            Copy
           </button>
         </div>
 
@@ -141,8 +162,9 @@ function TextForm() {
           <p className="mt-2">
             {text.split(" ").length} words, {text.length} characters
           </p>
-          <h2>Preview</h2>
-          <p>{text}</p>
+          <hr />
+          <h2 className="font-medium">Preview</h2>
+          <p className="text-base">{text}</p>
         </div>
       </div>
     </div>

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 
-.gradient1{
+.light{
     background: rgb(212,176,212);
     background: linear-gradient(90deg, rgba(212,176,212,1) 0%, rgba(54,68,189,1) 100%);
 }
