@@ -2,17 +2,17 @@ import React from "react";
 
 function Navbar(props) {
   return (
-    <div className={`relative w-full ${props.modde==="light"?"dark":"light"} overflow-hidden`}>
+    <div className={`relative w-full ${props.modde==="light"?"light":"dark"} text-${props.modde==="light"?"black":"white"} overflow-hidden`}>
       <div className="mx-auto flex max-w-8xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
         <div className="inline-flex items-center space-x-2">
           <span className="font-bold">Text Modifier</span>
         </div>
-        <div className="hidden lg:block">
+        <div className=" hidden lg:block">
           <ul className="ml-12 inline-flex space-x-8">
             <li>
               <a
                 href="#"
-                className="inline-flex items-center text-sm font-semibold text-gray-800 hover:text-gray-900"
+                className={`text-${props.modde==="light"?"black":"white"} inline-flex items-center text-sm font-semibold text-gray-800 hover:text-gray-900`}
               >
                 Home
                 <span>
@@ -36,7 +36,7 @@ function Navbar(props) {
             <li>
               <a
                 href="#"
-                className="inline-flex items-center text-sm font-semibold text-gray-800 hover:text-gray-900"
+                className={`text-${props.modde==="light"?"black":"white"} inline-flex items-center text-sm font-semibold text-gray-800 hover:text-gray-900`}
               >
                 About
                 <span>
@@ -60,7 +60,7 @@ function Navbar(props) {
             <li>
               <a
                 href="#"
-                className="inline-flex items-center text-sm font-semibold text-gray-800 hover:text-gray-900"
+                className={`text-${props.modde==="light"?"black":"white"} inline-flex items-center text-sm font-semibold text-gray-800 hover:text-gray-900`}
               >
                 Contact
                 <span>

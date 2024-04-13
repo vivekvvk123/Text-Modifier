@@ -101,7 +101,7 @@ function TextForm(props) {
         <h1 className="text-3xl mb-2  ">Enter your text below</h1>
 
         <textarea
-          className={`form-control border border-blue-600  w-full md:w-96 h-32 md:h-48 lg:w-[900px] sm:w-[400px] bg-${props.modde==="light"?"white":"black"} text-${props.modde==="light"?"black":"white"} `}
+          className={`form-control border border-blue-600  w-full md:w-96 h-32 md:h-48 lg:w-[900px] sm:w-[400px] bg-${props.modde==="light"?"white":"gray-950"} text-${props.modde==="light"?"black":"white"} `}
           id="mybox"
           value={text}
           onChange={handleOnChange}
