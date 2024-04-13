@@ -103,16 +103,15 @@ function TextForm(props) {
       <div className="p-8">
         <h1 className="text-3xl mb-2  ">Enter your text below</h1>
 
+
         <textarea
-          className={`form-control border border-blue-600  w-full md:w-96 h-32 md:h-48 lg:w-[900px] sm:w-[400px] bg-${
-            props.modde === "light" ? "white" : "gray-950"
-          } text-${props.modde === "light" ? "black" : "white"} `}
+          className="form-control border border-blue-600 w-full md:w-96 h-32 md:h-48 lg:w-[900px] sm:w-[400px]"
+          style={{ backgroundColor: props.modde === "light" ? "white" : "#272323"}}
           id="mybox"
           value={text}
           onChange={handleOnChange}
-          // rows="12"
-          // cols="90"
         ></textarea>
+
 
         <div
           className={`flex flex-col space-y-2 md:flex-row md:space-x-2 md:space-y-0 max-w-fit md:flex-wrap text-${
