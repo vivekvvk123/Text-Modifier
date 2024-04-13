@@ -92,16 +92,21 @@ function TextForm(props) {
     navigator.clipboard.writeText(text.value);
   };
 
-
   const [text, setText] = useState("Enter your text here");
 
   return (
-    <div className={`container flex flex-col items-center text-${props.modde==="light"?"black":"white"} `}>
+    <div
+      className={`container flex flex-col items-center text-${
+        props.modde === "light" ? "black" : "white"
+      } `}
+    >
       <div className="p-8">
         <h1 className="text-3xl mb-2  ">Enter your text below</h1>
 
         <textarea
-          className={`form-control border border-blue-600  w-full md:w-96 h-32 md:h-48 lg:w-[900px] sm:w-[400px] bg-${props.modde==="light"?"white":"gray-950"} text-${props.modde==="light"?"black":"white"} `}
+          className={`form-control border border-blue-600  w-full md:w-96 h-32 md:h-48 lg:w-[900px] sm:w-[400px] bg-${
+            props.modde === "light" ? "white" : "gray-950"
+          } text-${props.modde === "light" ? "black" : "white"} `}
           id="mybox"
           value={text}
           onChange={handleOnChange}
@@ -109,7 +114,11 @@ function TextForm(props) {
           // cols="90"
         ></textarea>
 
-        <div className={`flex flex-col space-y-2 md:flex-row md:space-x-2 md:space-y-0 max-w-fit md:flex-wrap text-${props.modde==="light"?"black":"white"}`}>
+        <div
+          className={`flex flex-col space-y-2 md:flex-row md:space-x-2 md:space-y-0 max-w-fit md:flex-wrap text-${
+            props.modde === "light" ? "black" : "white"
+          }`}
+        >
           <button
             type="button"
             onClick={handleClick}
